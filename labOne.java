@@ -51,8 +51,18 @@ public class labOne{
                     int userProceed = userInput.nextInt();
 
                         if (userProceed == 1) {
-                            System.out.println("Please enter new values for Matrix 1:");
+                            for (int i = 0; i<matrixOne.length; i++) {
+                            System.out.println("Please enter values for row " + (i + 1) + " for Matrix One");
                             System.out.print(">>>");
+
+                                for (int j = 0; j <matrixOne[i].length; j++) {
+                                    System.out.println("Enter value for column " + (j + 1) + " for row " + (i + 1));
+                                    matrixOne[i][j] = userInput.nextInt();
+
+                                }
+                            }
+                            System.out.println();
+                            break;
                         } 
                         else if (userProceed == 2) {
                             userContinue = false;
