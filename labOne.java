@@ -6,26 +6,26 @@ public class labOne{
         Scanner userInput = new Scanner(System.in); //intializes a new scanner for user input, stored as userInput
         boolean keepRunning = true;
 
-        System.out.println("Welcome to the 2d Matrice Calculator\nPlease choose from the following options:\n");
-        System.out.println("1.View current Matrices\n2.Edit Matrice Value\n3.Perform Matrice Calculation\n4.Exit System");
-        System.out.print(">>>");
-        
-        int menuSelection = userInput.nextInt(); //stores the user menu selection as menuSelection
-        boolean userContinue = true;
-
         int[][] matrixOne = {
-        {0,0,0},
-        {0,0,0},
-        {0,0,0}
-        };
+            {0,0,0},
+            {0,0,0},
+            {0,0,0}
+            };
 
-        int[][] matrixTwo = {
-        {0,0,0},
-        {0,0,0},
-        {0,0,0}
-        };
+            int[][] matrixTwo = {
+            {0,0,0},
+            {0,0,0},
+            {0,0,0}
+            };
 
-        while(keepRunning = true) {
+        while(keepRunning == true) {
+            System.out.println("Welcome to the 2d Matrice Calculator\nPlease choose from the following options:\n");
+            System.out.println("1.View current Matrices\n2.Edit Matrice Value\n3.Perform Matrice Calculation\n4.Exit System");
+            System.out.print(">>>");
+        
+            int menuSelection = userInput.nextInt(); //stores the user menu selection as menuSelection
+            boolean userContinue = true;
+
             switch(menuSelection) {
                 case 1:
                     for (int i = 0; i<matrixOne.length ;i++) { //iterates through the first matrix
@@ -80,10 +80,10 @@ public class labOne{
                                      userInput.next();
                                 }
                             
-
+                             }
                             matrixOne = new int[L][W];
                             matrixTwo = new int[L][W];
-                            }
+                            
                             
                             System.out.println("Filling first matrix. Matrix is filled from left to right, top to bottom.\n");
 
@@ -91,7 +91,7 @@ public class labOne{
                             System.out.println("Please enter values for row " + (i + 1) + " for Matrix One\n");
 
                                 for (int j = 0; j <matrixOne[i].length; j++) {
-                                    System.out.println("First Matrix: Enter value for column " + (j + 1) + ".\n>>>");
+                                    System.out.println("First Matrix Row " + (i + 1) + ": " + "Enter value for column " + (j + 1) + ".\n>>>");
                                     matrixOne[i][j] = userInput.nextInt();
 
                                 }
@@ -103,7 +103,7 @@ public class labOne{
                             System.out.println("Please enter values for row " + (i + 1) + " for Matrix Two\n");
 
                                 for (int j = 0; j <matrixTwo[i].length; j++) {
-                                    System.out.println("Second Matrix: Enter value for column " + (j + 1) + ".\n>>>");
+                                    System.out.println("Second Matrix Row" + (i + 1) + ": " + "Enter value for column " + (j + 1) + ".\n>>>");
                                     matrixTwo[i][j] = userInput.nextInt();
 
                                 }
@@ -111,13 +111,15 @@ public class labOne{
 
                             System.out.println();
                             break;
-                        } 
-                        else if (userProceed == 2) {
+                            }
+                        
+                         if (userProceed == 2) {
                             userContinue = false;
                             System.out.println("Returning to main menu");
                             break;
                         }
                     }
+            
                     // add code for method that first confirms user wants to change values, this will clear previous entries, then takes 2d array values 2x
                     break;
 
